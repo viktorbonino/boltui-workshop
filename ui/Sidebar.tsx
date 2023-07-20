@@ -32,7 +32,7 @@ export default function Sidebar() {
     : pages
 
   return (
-    <div className="overflow-none fixed top-0 flex h-screen max-h-screen w-72 shrink-0 flex-col gap-6 border-r border-base bg-foreground pr-8 pt-12 text-subtle shadow-inner dark:bg-base">
+    <div className="overflow-none fixed top-0 flex h-screen max-h-screen w-60 shrink-0 flex-col gap-6 border-r border-base bg-foreground pr-8 pt-12 text-subtle shadow-inner dark:bg-base">
       <div className=" pl-7">
         <Searchbar
           placeholder="Find components"
@@ -46,8 +46,10 @@ export default function Sidebar() {
         <div className="flex flex-col gap-6">
           {filteredPages.map((section) => (
             <div className="flex flex-col gap-3.5" key={section.sectionName}>
-              <span className="pl-4 font-medium text-default">{section.sectionName}</span>
-              <div className="flex flex-col gap-1">
+              <span className="pl-4 text-sm font-medium text-default">
+                {section.sectionName}
+              </span>
+              <div className="flex flex-col gap-1 text-xs">
                 {section.pages.map((page) => (
                   <SidebarLink
                     pagePath={page.path}
@@ -90,7 +92,7 @@ function SidebarLink({
     <Link
       {...rest}
       className={cnBase(
-        'transitions-colors ml-0.5 rounded-default px-4 py-2 text-[0.9rem] outline-none duration-200 focus:ring-subtle focus-visible:ring-2',
+        'transitions-colors ml-0.5 rounded-default px-4 py-2 text-sm outline-none duration-200 focus:ring-subtle focus-visible:ring-2',
         pathname === pagePath
           ? 'bg-accent text-default'
           : 'text-subtle hover:bg-subtle hover:text-default'

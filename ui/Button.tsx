@@ -8,10 +8,10 @@ export const button = tv({
   base: 'inline-flex gap-2 items-center rounded-default border justify-center font-medium transition-colors duration-200 outline-none focus-visible:ring-2 disabled:cursor-not-allowed',
   variants: {
     size: {
-      xs: 'text-xs px-2.5 py-1.5',
-      sm: 'text-xs px-3 py-2',
-      md: 'text-sm px-4 py-2',
-      lg: 'text-base px-4 py-2',
+      xs: 'text-xs px-2 py-1',
+      sm: 'text-xs px-3 py-1.5',
+      md: 'text-xs px-4 py-2',
+      lg: 'text-sm px-4 py-2',
       xl: 'text-base px-6 py-3',
     },
     variant: {

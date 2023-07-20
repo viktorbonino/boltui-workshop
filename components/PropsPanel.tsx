@@ -59,12 +59,12 @@ export function SlotInputType({ id, slotName }: { id: string; slotName: string }
   return (
     <div className="space-y-5">
       <div className="flex flex-row items-center gap-1 border-b border-base pb-2">
-        <h3 className="text-lg font-medium text-default">
+        <h3 className="text-base font-medium text-default">
           {slotName ? slotName.charAt(0).toUpperCase() + slotName.slice(1) : null}
         </h3>
-        <Button variant="ghost" size="xs" className="p-1.5" asChild>
+        <Button variant="ghost" size="xs" className="p-0.5" asChild>
           <Link href={`#${slotName}-props`} className="hidden xl:block">
-            <Info className="h-3.5 w-3.5" />
+            <Info className="h-3 w-3" />
           </Link>
         </Button>
       </div>

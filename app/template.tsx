@@ -28,7 +28,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
             <Sidebar />
           </aside>
 
-          <main className="relative w-full px-8 pb-4 pt-10 md:px-16 lg:ml-72 rtl:lg:ml-0 rtl:lg:mr-72">
+          <main className="relative w-full px-8 pb-4 pt-10 md:px-20 lg:ml-72 rtl:lg:ml-0 rtl:lg:mr-72 xl:px-32">
             <div className="mx-auto max-w-5xl">
               {children} <Pager />
             </div>

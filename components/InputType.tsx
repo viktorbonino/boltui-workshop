@@ -21,7 +21,7 @@ export default function InputType({
       <div className="space-y-2.5">
         <div className="flex flex-col gap-1.5">
           <Label>{arg.label}</Label>
-          <span className="text-sm text-subtle">{arg.description}</span>
+          <span className="text-xs text-subtle">{arg.description}</span>
         </div>
         <Autocomplete
           value={value}
@@ -41,7 +41,7 @@ export default function InputType({
             {arg.label}
             {arg.required ? <span className="text-danger-inverted">*</span> : ''}
           </Label>
-          <span className="text-sm text-subtle">{arg.description}</span>
+          <span className="text-xs text-subtle">{arg.description}</span>
         </div>
         <Input
           value={value}
@@ -60,7 +60,7 @@ export default function InputType({
       <div className="space-y-2.5">
         <div className="flex flex-col gap-1.5">
           <Label>{arg.label}</Label>
-          <span className="text-sm text-subtle">{arg.description}</span>
+          <span className="text-xs text-subtle">{arg.description}</span>
         </div>
         <Input
           value={value}
@@ -80,7 +80,7 @@ export default function InputType({
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-1.5">
           <Label>{arg.label}</Label>
-          <span className="mr-1.5 break-words text-[13px] text-subtle">
+          <span className="mr-1.5 break-words text-xs text-subtle">
             {arg.description}
           </span>
         </div>

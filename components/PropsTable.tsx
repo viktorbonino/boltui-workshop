@@ -18,7 +18,7 @@ export default function PropsTable({
             href={`#${title.toLowerCase().replaceAll(' ', '-')}`}
             id={title.toLowerCase().replaceAll(' ', '-')}
             as="h2"
-            variant="h4"
+            variant="h5"
             asJumpLink
           >
             {title}

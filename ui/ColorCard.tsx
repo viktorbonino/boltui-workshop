@@ -54,14 +54,12 @@ export default function ColorCard({
   return (
     <div className="flex flex-row items-center gap-5 rounded-default p-2 hover:bg-accent selection:hover:bg-foreground">
       <div
-        className={cnBase(
-          'h-16 w-16 shrink-0 rounded-default border border-base lg:h-20 lg:w-20'
-        )}
+        className={cnBase('h-16 w-16 shrink-0 rounded-default border border-base')}
         style={{ backgroundColor: bg }}
       ></div>
       <div className="flex h-full flex-col justify-evenly">
         <button
-          className="group flex w-fit items-center text-sm lg:text-base"
+          className="group flex w-fit items-center lg:text-base"
           onClick={() => copyToClipboard(`var(${cssVar})`, 'cssVar')}
           aria-label="Copy CSS variable name"
         >

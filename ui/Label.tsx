@@ -5,7 +5,7 @@ import * as LabelPrimitive from '@radix-ui/react-label'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const labelVariants = tv({
-  base: 'text-default leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+  base: 'text-default text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
 })
 
 const Label = React.forwardRef<

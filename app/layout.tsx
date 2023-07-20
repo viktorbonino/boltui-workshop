@@ -5,7 +5,7 @@ import { cnBase } from 'tailwind-variants'
 
 const font = Inter({
   subsets: ['latin'],
-  display: 'swap',
+  variable: '--font-inter',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -13,8 +13,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir="ltr">
       <body
         className={cnBase(
-          'min-h-screen bg-white antialiased dark:bg-foreground',
-          font.className
+          'min-h-screen bg-white font-sans antialiased dark:bg-foreground',
+          font.variable
         )}
       >
         {children}

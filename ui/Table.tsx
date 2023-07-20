@@ -10,7 +10,7 @@ const TableStyles = tv({
     row: 'border-base border-b transition-colors even:bg-base/50',
     head: 'h-11 px-4 text-left align-middle font-medium text-subtle',
     cell: 'py-4 px-4 align-middle',
-    caption: 'mt-4 text-sm text-default',
+    caption: 'mt-4 text-xs text-default',
   },
 })
 

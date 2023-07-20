@@ -59,12 +59,12 @@ export default function Autocomplete({
             <div className="flex items-center border-b border-base px-2">
               <Search className="mr-2 h-4 w-4 shrink-0 text-subtle" />
               <Command.Input
-                className="h-11 w-full bg-base text-sm  text-default outline-none placeholder:text-subtle"
+                className="h-11 w-full bg-base text-xs  text-default outline-none placeholder:text-subtle"
                 placeholder={placeholder}
                 name={name}
               />
             </div>
-            <Command.List className="mt-2 max-h-[200px] overflow-auto px-1.5 text-sm text-default">
+            <Command.List className="mt-2 max-h-[200px] overflow-auto px-1.5 text-xs text-default">
               <Command.Empty className="ml-3 py-2">No results found.</Command.Empty>
               {values.map((v) => (
                 <Command.Item
@@ -74,7 +74,7 @@ export default function Autocomplete({
                     setOpen(false)
                   }}
                   value={v.label}
-                  className="relative flex cursor-default select-none items-center rounded-default py-1.5 pl-4 text-sm outline-none aria-selected:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+                  className="relative flex cursor-default select-none items-center rounded-default py-1.5 pl-4 outline-none aria-selected:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
                 >
                   <span>{v.label}</span>
                 </Command.Item>

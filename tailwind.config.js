@@ -1,6 +1,4 @@
-const rxcolors = require('@radix-ui/colors')
 const tailwindcss = require('tailwindcss/defaultTheme')
-const rxColorsArr = Object.entries(rxcolors).filter(([key, _]) => !key.endsWith('A'))
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,16 +11,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
       colors: {
-        ...Object.values(rxColorsArr).reduce((acc, curr) => {
-          const colors = Object.fromEntries(
-            Object.entries(curr[1]).map(([key, value]) => [
-              `rx-${curr[0] + key.replace(/[^0-9]/g, '')}`,
-              value,
-            ])
-          )
-          return { ...acc, ...colors }
-        }, {}),
         foreground: 'hsl(var(--bg-foreground))',
         primary: 'hsl(var(--bg-primary))',
       },

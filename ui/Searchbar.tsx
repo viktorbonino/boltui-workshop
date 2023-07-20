@@ -13,7 +13,7 @@ const Searchbar = forwardRef<HTMLInputElement, InputProps>(
         </div>
         <input
           className={cn(
-            'block w-full rounded-default border border-base bg-base py-2 pl-10 text-sm shadow-default outline-none transition-colors duration-200 placeholder:text-subtle focus:border-rx-mauve11 focus:ring-1 focus:ring-subtle',
+            'block w-full rounded-default border border-base bg-base py-2 pl-10 text-xs shadow-default outline-none transition-colors duration-200 placeholder:text-subtle focus:border-emphasis focus:ring-1 focus:ring-subtle',
             className
           )({
             twMerge: true,

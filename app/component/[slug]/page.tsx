@@ -1,6 +1,7 @@
 import { allComponents } from '@/.contentlayer/generated'
 import MDX from '@/components/Mdx'
 import { Metadata } from 'next'
+import Text from '@/ui/Text'
 
 export async function generateStaticParams() {
   return allComponents.map((component) => ({
@@ -42,12 +43,15 @@ export default function Page({
     <div className="flex flex-col">
       <div className="flex items-center justify-between border-b border-base pb-8">
         <div>
-          <h1 className="scroll-m-20 text-6xl font-bold tracking-tight text-default">
+          <Text
+            as="h1"
+            className="scroll-m-20 text-5xl font-bold tracking-tight text-default"
+          >
             {component.title}
-          </h1>
-          <h2 className="mt-4 scroll-m-20 text-xl text-subtle">
+          </Text>
+          <Text as="h2" className="mt-4 scroll-m-20 text-xl text-subtle">
             {component.description}
-          </h2>
+          </Text>
         </div>
         <div className="flex w-fit self-center"></div>
       </div>

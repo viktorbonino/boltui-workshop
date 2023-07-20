@@ -24,7 +24,7 @@ export default function ComponentPreview({
 }) {
   const { activeComponent, setActiveComponent } = usePropsPanel()
   const [dir, setDir] = useState<'rtl' | 'ltr'>('ltr')
-  console.log('bdo', dir)
+
   return (
     <Tabs.Root defaultValue="preview" id={title?.toLowerCase()}>
       <div
@@ -34,23 +34,23 @@ export default function ComponentPreview({
         )}
       >
         {title ? (
-          <Text variant="h4" as="h2" href={`#${title.toLowerCase()}`} asJumpLink>
+          <Text variant="h5" as="h2" href={`#${title.toLowerCase()}`} asJumpLink>
             {title}
           </Text>
         ) : null}
         <div className="flex items-center gap-2">
           <Tabs.List>
             <Tabs.Trigger value="code">
-              <FileCode className="h-4 w-4" aria-label="implementation code" />
+              <FileCode className="h-3.5 w-3.5" aria-label="implementation code" />
             </Tabs.Trigger>
             <Tabs.Trigger value="preview">
-              <Component className="h-4 w-4" aria-label="preview" />
+              <Component className="h-3.5 w-3.5" aria-label="preview" />
             </Tabs.Trigger>
           </Tabs.List>
           <Button
             variant="secondary"
             size="xs"
-            className="w-10 py-2"
+            className="w-10 py-2 text-xs"
             onClick={() => setDir((dir) => (dir === 'ltr' ? 'rtl' : 'ltr'))}
           >
             {dir.toUpperCase()}

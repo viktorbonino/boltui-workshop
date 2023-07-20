@@ -13,7 +13,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full space-y-2">
         <Label htmlFor={props.name}>{props.label}</Label>
-        <p className="text-sm leading-none text-subtle peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+        <p className="text-xs leading-none text-subtle peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
           {props.description}
         </p>
         <div className="relative">
@@ -24,7 +24,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ) : null}
           <input
             className={cn(
-              'block w-full rounded-default border border-base bg-base px-4 py-2 text-sm font-medium text-default shadow-default outline-none transition-colors duration-200 placeholder:text-subtle invalid:border-danger focus:border-emphasis focus:ring-1 focus:ring-subtle focus:invalid:border-danger focus:invalid:ring-danger disabled:cursor-not-allowed disabled:opacity-50',
+              'block w-full rounded-default border border-base bg-base px-4 py-2 text-xs font-medium text-default shadow-default outline-none transition-colors duration-200 placeholder:text-subtle invalid:border-danger focus:border-emphasis focus:ring-1 focus:ring-subtle focus:invalid:border-danger focus:invalid:ring-danger disabled:cursor-not-allowed disabled:opacity-50',
               leftElement ? 'pl-10' : '',
               className
             )({
