@@ -65,7 +65,6 @@ const Content = ({ className, children, setOpen, open, ...props }: SheetContentP
     const offset = info.offset.y
     const velocity = info.velocity.y
     const height = leafletRef.current?.getBoundingClientRect().height || 0
-    console.log(offset, height / 2, leafletRef.current?.getBoundingClientRect().height)
     if (offset > height / 2 || velocity > 800) {
       await controls.start({ y: '100%', transition: transitionProps })
       setOpen(false)
