@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 const TableStyles = tv({
   slots: {
-    root: 'w-full text-sm caption-bottom table-fixed border-collapse rounded-default',
+    root: 'w-full text-sm caption-bottom table-auto md:table-fixed border-collapse rounded-default',
     header: 'bg-subtle',
     body: '[&_tr:last-child]:border-0',
     footer: 'text-subtle bg-base font-medium',
