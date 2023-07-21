@@ -9,6 +9,7 @@ import * as PropsSheet from './PropsSheet'
 import { useState } from 'react'
 import Text from '@/ui/Text'
 import { DirectionProvider } from '@radix-ui/react-direction'
+
 export default function ComponentPreview({
   children,
   code,
@@ -24,6 +25,7 @@ export default function ComponentPreview({
 }) {
   const { activeComponent, setActiveComponent } = usePropsPanel()
   const [dir, setDir] = useState<'rtl' | 'ltr'>('ltr')
+  const [open, setOpen] = useState(false)
 
   return (
     <Tabs.Root defaultValue="preview" id={title?.toLowerCase()}>
@@ -74,7 +76,11 @@ export default function ComponentPreview({
                   <X className="h-4 w-4" aria-label="close props settings panel" />
                 )}
               </Button>
-              <PropsSheet.Root activeComponent={activeComponent}>
+              <PropsSheet.Root
+                open={open}
+                setOpen={setOpen}
+                activeComponent={activeComponent}
+              >
                 <PropsSheet.Trigger className="xl:hidden" asChild>
                   <Button
                     variant="secondary"

@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir="ltr">
       <body
         className={cnBase(
-          'min-h-screen bg-white font-sans antialiased dark:bg-foreground',
+          'min-h-screen bg-base font-sans antialiased dark:bg-foreground',
           font.variable
         )}
       >

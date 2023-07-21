@@ -4,17 +4,21 @@ import { PropsInputs, PropsInputsWithSlots } from './PropsPanel'
 function Root({
   children,
   activeComponent,
+  open,
+  setOpen,
 }: {
   children: React.ReactElement<typeof Sheet.Trigger>
   activeComponent: {
     id: string
     hasSlots: boolean
   }
+  open: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   return (
-    <Sheet.Root>
+    <Sheet.Root open={open} onOpenChange={(open) => setOpen(open)}>
       {children}
-      <Sheet.Content className="max-h-[66%] py-10">
+      <Sheet.Content open={open} setOpen={setOpen}>
         <div className="flex flex-col gap-12 overflow-auto px-4">
           {activeComponent.id ? (
             activeComponent.hasSlots ? (

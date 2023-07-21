@@ -19,6 +19,7 @@
     "@radix-ui/react-tabs": "^1.0.3",
     "cmdk": "^0.2.0",
     "contentlayer": "0.3.1",
+    "framer-motion": "^10.13.0",
     "jotai": "^2.0.4",
     "jotai-optics": "^0.3.0",
     "lucide-react": "^0.258.0",

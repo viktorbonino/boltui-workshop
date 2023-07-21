@@ -2,7 +2,7 @@
 import Button from '@/ui/Button'
 import ComponentPreview from '../ComponentPreview'
 import CPropsTable from '@/components/PropsTable'
-import { createArgs, useArgs, useArgValue, Args } from '@/lib/useArgs'
+import { createArgs, useArgs, Args } from '@/lib/useArgs'
 
 const sizes: Array<React.ComponentProps<typeof Button>['size']> = [
   'xs',
