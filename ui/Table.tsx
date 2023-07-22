@@ -8,7 +8,7 @@ const TableStyles = tv({
     body: '[&_tr:last-child]:border-0',
     footer: 'text-subtle bg-base font-medium',
     row: 'border-base border-b transition-colors even:bg-base/50',
-    head: 'h-11 px-4 text-left align-middle font-medium text-subtle',
+    head: 'h-10 px-4 text-left align-middle font-medium text-subtle',
     cell: 'py-4 px-4 align-middle',
     caption: 'mt-4 text-xs text-default',
   },

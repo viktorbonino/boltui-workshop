@@ -116,7 +116,7 @@ function Playground() {
     <ComponentPreview code={playgroundCode} id={id} title="Playground" hasSlots>
       <div className="py-8">
         <Select.Root>
-          <Select.Trigger {...trigger.props}>
+          <Select.Trigger {...trigger.props} aria-label="playground select">
             <Select.Value {...value.props} />
           </Select.Trigger>
           <Select.Content {...content.props}>
