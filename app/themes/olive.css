@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply selection:bg-accent;
+  }
+  :root {
+    --bg-base: 110 20% 99%; /* olive1 */
+    --bg-foreground: 120 16.7% 97.6%; /* olive2 */
+    --bg-primary: 133 50% 32.5%; /* grass11 */
+    --bg-primary-active: 131 39% 52.1%; /* grass10 */
+    --bg-accent: 117 7.1% 90.8%; /* olive5 */
+    --bg-subtle: 119 10.1% 95.2%; /* olive3 */
+    --bg-muted: 131 41% 46.5%; /* grass9 */
+
+    --bg-danger: 10 71.5% 50%; /* tomato10 */
+    --bg-danger-active: 8 92.8% 91%; /* tomato5 */
+    --bg-danger-accent: 8 92.8% 91%; /* tomato5 */
+    --bg-danger-subtle: 8 100% 96.6%; /* tomato3 */
+
+    --border-base: 114 5.9% 85.4%; /* olive7 */
+    --border-emphasis: 110 5.2% 77.3%; /* olive8 */
+    --border-primary: 110 25% 9.5%; /* olive12 */
+    --border-subtle: 110 3% 43%; /* olive11 */
+    --border-danger: 10 71.5% 50%; /* tomato11 */
+
+    --text-default: 110 25% 9.5%; /* olive12 */
+    --text-subtle: 110 3% 43%; /* olive11 */
+    --text-inverted: 124 39% 79.7%; /* grass6 */
+    --text-muted: 120 16.7% 97.6%; /* olive2 */
+
+    --text-danger: 10 82% 43.5%; /* tomato11 */
+    --text-danger-inverted: 0 100% 99.4%; /* tomato1 */
+
+    --text-success: 153 67% 28.5%; /* green11 */
+
+    --text-blue: 208 100% 47.3%; /* blue10 */
+
+    --ring-default: 133 50% 32.5%; /* grass11 */
+    --ring-subtle: 132 43.1% 42.2%; /* grass10 */
+    --ring-danger: 10 71.5% 50%; /* tomato10 */
+
+    --ring-offset: 110 20% 99%; /* olive1 */
+    --ring-offset-subtle: 120 16.7% 97.6%; /* olive2 */
+
+    --shadow-default: theme('boxShadow.sm');
+    --shadow-large: theme('boxShadow.lg');
+
+    --border-radius-default: theme('borderRadius.xl');
+    --border-radius-medium: theme('borderRadius.lg');
+
+    /* prism */
+    --prism-base: hsl(110, 25%, 9.5%);
+    --prism-bg: hsl(120, 16.7%, 97.6%);
+    --prism-token-selector: hsl(211, 100%, 43.2%);
+    --prism-token-property: hsl(322, 75%, 46%);
+    --prism-token-function: hsl(191, 91.2%, 36.8%);
+    --prism-token-comment: hsl(110, 3%, 43%);
+    --prism-token-regex: hsl(50, 100%, 48.5%);
+  }
+
+  .dark {
+    --bg-base: 110 5% 8.6%; /* olive1 */
+    --bg-foreground: 105 7.4% 10.6%; /* olive2 */
+    --bg-primary: 131 43% 57.2%; /* grass11 */
+    --bg-primary-active: 131 41% 46.5%; /* grass9 */
+    --bg-accent: 107 5.3% 17.4%; /* olive5 */
+    --bg-subtle: 106 6.4% 13.1%; /* olive3 */
+    --bg-muted: 131 39% 52.1%; /* grass10 */
+
+    --bg-danger: 10 81.7% 59%; /* tomato10 */
+    --bg-danger-active: 7 60.1% 20.6%; /* tomato5 */
+    --bg-danger-accent: 7 60.1% 20.6%; /* tomato5 */
+    --bg-danger-subtle: 8 52% 15.3%; /* tomato3 */
+
+    --border-base: 108 4.4% 23.6%; /* olive7 */
+    --border-emphasis: 110 3.8% 30.6%; /* olive8 */
+    --border-primary: 110 6% 93%; /* olive12 */
+    --border-subtle: 110 5% 61.8%; /* olive11 */
+    --border-danger: 10 81.7% 59%; /* tomato11 */
+
+    --text-default: 110 6% 93%; /* olive12 */
+    --text-subtle: 110 5% 61.8%; /* olive11 */
+    --text-inverted: 135 39.6% 19.1%; /* grass6 */
+    --text-muted: 105 7.4% 10.6%; /* olive2 */
+
+    --text-danger: 10 85% 62.8%; /* tomato11 */
+    --text-danger-inverted: 10 23% 9.4%; /* tomato1 */
+
+    --text-success: 151 50% 53.2%; /* green11 */
+
+    --text-blue: 209 100% 60.6%;
+
+    --ring-default: 131 43% 57.2%; /* grass11 */
+    --ring-subtle: 131 39% 52.1%; /* grass10 */
+    --ring-danger: 10 81.7% 59%; /* tomato10 */
+
+    --ring-offset: 110 5% 8.6%; /* olive1 */
+    --ring-offset-subtle: 105 7.4% 10.6%; /* olive2 */
+
+    --shadow-default: theme('boxShadow.lg');
+    --shadow-large: theme('boxShadow.2xl');
+
+    /* prism */
+    --prism-base: hsl(256, 6%, 93.2%);
+    --prism-bg: hsl(246, 6%, 9%);
+    --prism-token-selector: hsl(210, 100%, 66.1%);
+    --prism-token-property: hsl(325, 90%, 66.4%);
+    --prism-token-function: hsl(188, 100%, 40%);
+    --prism-token-comment: hsl(253, 4%, 63.7%);
+    --prism-token-regex: hsl(54, 100%, 68%);
+  }
+}

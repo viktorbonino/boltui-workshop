@@ -48,6 +48,9 @@
     --shadow-default: theme('boxShadow.sm');
     --shadow-large: theme('boxShadow.lg');
 
+    --border-radius-default: theme('borderRadius.lg');
+    --border-radius-medium: theme('borderRadius.md');
+
     /* prism */
     --prism-base: hsl(260, 25%, 11%);
     --prism-bg: hsl(300, 7.7%, 97.5%);

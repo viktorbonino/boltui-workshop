@@ -62,8 +62,8 @@ module.exports = {
         subtle: 'hsl(var(--ring-offset-subtle))',
       },
       borderRadius: {
-        medium: tailwindcss.borderRadius.md,
-        default: tailwindcss.borderRadius.lg,
+        medium: 'var(--border-radius-medium)',
+        default: 'var(--border-radius-default)',
       },
       boxShadow: {
         default: 'var(--shadow-default)',

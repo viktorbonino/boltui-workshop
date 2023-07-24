@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply selection:bg-accent;
+  }
+  :root {
+    --bg-base: 210 20% 98%; /* gray-50 */
+    --bg-foreground: 220 14.3% 95.9%; /* gray-100 */
+    --bg-primary: 217.2 91.2% 59.8%; /* blue-500 */
+    --bg-primary-active: 224.3 76.3% 48%; /* blue-700 */
+    --bg-accent: 220 13% 91%; /* gray-300 */
+    --bg-subtle: 220 13% 91%; /* olive3 */
+    --bg-muted: 221.2 83.2% 53.3%; /* blue-600 */
+
+    --bg-danger: 0 84.2% 60.2%; /* red-500 */
+    --bg-danger-active: 0 73.7% 41.8%; /* red-700 */
+    --bg-danger-accent: 0 73.7% 41.8%; /* red-700 */
+    --bg-danger-subtle: 0 72.2% 50.6%; /* red-600 */
+
+    --border-base: 220 13% 91%; /* gray-200 */
+    --border-emphasis: 216 12.2% 83.9%; /* gray-300 */
+    --border-primary: 217.2 91.2% 59.8%; /* blue-500 */
+    --border-subtle: 220 14.3% 95.9%; /* gray-100 */
+    --border-danger: 10 71.5% 50%; /* tomato11 */
+
+    --text-default: 220.9 39.3% 11%; /* gray-900 */
+    --text-subtle: 215 13.8% 34.1%; /* gray-600 */
+    --text-inverted: 220 14.3% 95.9%; /* gray-100 */
+    --text-muted: 220 13% 91%; /* gray-200 */
+
+    --text-danger: 0 85.7% 97.3%; /* red-50 */
+    --text-danger-inverted: 0 85.7% 97.3%; /* red-50 */
+
+    --text-success: 142.1 76.2% 36.3%; /* green-600 */
+
+    --text-blue: 221.2 83.2% 53.3%; /* green-600 */
+
+    --ring-default: 217.2 91.2% 59.8%; /* blue-500 */
+    --ring-subtle: 217.9 10.6% 64.9%; /* gray-400 */
+    --ring-danger: 0 84.2% 60.2%; /* red-500 */
+
+    --ring-offset: 210 20% 98%; /* gray-50 */
+    --ring-offset-subtle: 220 14.3% 95.9%; /* gray-100 */
+
+    --shadow-default: theme('boxShadow.sm');
+    --shadow-large: theme('boxShadow.lg');
+
+    --border-radius-default: theme('borderRadius.md');
+    --border-radius-medium: theme('borderRadius.DEFAULT');
+
+    /* prism */
+    --prism-base: hsl(110, 25%, 9.5%);
+    --prism-bg: hsl(120, 16.7%, 97.6%);
+    --prism-token-selector: hsl(211, 100%, 43.2%);
+    --prism-token-property: hsl(322, 75%, 46%);
+    --prism-token-function: hsl(191, 91.2%, 36.8%);
+    --prism-token-comment: hsl(110, 3%, 43%);
+    --prism-token-regex: hsl(50, 100%, 48.5%);
+  }
+
+  .dark {
+    --bg-base: 224 71% 4%; /* gray-950 */
+    --bg-foreground: 224 71% 4%; /* gray-950 */
+    --bg-primary: 211.7 96.4% 78.4%; /* blue-300 */
+    --bg-primary-active: 214.3 94.6% 92.7%; /* blue-100 */
+    --bg-accent: 215 27.9% 16.9%; /* gray-800 */
+    --bg-subtle: 215 27.9% 10.9%; /* gray-800 (with less lightness) */
+    --bg-muted: 213.3 96.9% 87.3%; /* blue-200 */
+
+    --bg-danger: 0 93.5% 81.8%; /* red-300 */
+    --bg-danger-active: 0 93.3% 94.1%; /* red-100 */
+    --bg-danger-accent: 0 93.5% 81.8%; /* red-300 */
+    --bg-danger-subtle: 0 96.3% 89.4%; /* red-200 */
+
+    --border-base: 216.9 19.1% 26.7%; /* gray-700 */
+    --border-emphasis: 215 27.9% 29.9%; /* gray-800 (with more lightness) */
+    --border-primary: 220.9 39.3% 11%; /* gray-900 */
+    --border-subtle: 216.9 19.1% 26.7%; /* gray-700 */
+    --border-danger: 0 96.3% 89.4%; /* red-200 */
+
+    --text-default: 210 20% 98%; /* gray-50 */
+    --text-subtle: 217.9 10.6% 64.9%; /* gray-100 */
+    --text-inverted: 220.9 39.3% 11%; /* gray-900 */
+    --text-muted: 215 27.9% 16.9%; /* gray-800 */
+
+    --text-danger: 0 70% 35.3%; /* red-800 */
+    --text-danger-inverted: 0 70% 35.3%; /* red-800 */
+
+    --text-success: 141.7 76.6% 73.1%; /* green-300 */
+
+    --text-blue: 224.3 76.3% 48%; /* blue-700 */
+
+    --ring-default: 211.7 96.4% 78.4%; /* blue-300 */
+    --ring-subtle: 215 13.8% 34.1%; /* blue-200 */
+    --ring-danger: 0 93.5% 81.8%; /* red-300 */
+
+    --ring-offset: 220.9 39.3% 11%; /* gray-900 */
+    --ring-offset-subtle: 215 27.9% 16.9%; /* gray-800 */
+
+    --shadow-default: theme('boxShadow.lg');
+    --shadow-large: theme('boxShadow.2xl');
+
+    /* prism */
+    --prism-base: hsl(256, 6%, 93.2%);
+    --prism-bg: hsl(220.9, 39.3%, 11%);
+    --prism-token-selector: hsl(210, 100%, 66.1%);
+    --prism-token-property: hsl(325, 90%, 66.4%);
+    --prism-token-function: hsl(188, 100%, 40%);
+    --prism-token-comment: hsl(253, 4%, 63.7%);
+    --prism-token-regex: hsl(54, 100%, 68%);
+  }
+}
