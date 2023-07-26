@@ -8,6 +8,8 @@ import Searchbar from './Searchbar'
 import ThemeToggle from '@/components/ThemeToggle'
 import { useState } from 'react'
 import { usePropsPanel } from '@/lib/usePropsPanel'
+import { Twitter, Github } from 'lucide-react'
+import Button from './Button'
 
 export default function Sidebar() {
   const [search, setSearch] = useState('')
@@ -71,7 +73,19 @@ export default function Sidebar() {
           ))}
         </div>
       </div>
-      <div className="mb-4 mt-auto self-end">
+      <div className="mb-4 mt-auto flex w-full items-center justify-between self-end pl-4">
+        <div className="flex gap-0.5">
+          <Button variant="ghost" size="sm" className="px-1" asChild>
+            <Link href="https://twitter.com/ViktorB01">
+              <Twitter className="h-5 text-blue" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" className="px-1" asChild>
+            <Link href="https://github.com/viktorbonino/boltui-workshop">
+              <Github className="h-5" />
+            </Link>
+          </Button>
+        </div>
         <ThemeToggle />
       </div>
     </div>
