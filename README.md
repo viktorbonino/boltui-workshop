@@ -1,36 +1,207 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a template for showcasing and documenting your ui components for your design system or ui kit.
+It uses Next.js 13 app dir, Typescript, Radix ui and colors, TailwindCSS, Jotai, Framer Motion and Contentlayer.
 
 ## Getting Started
+### Create a New Story
+To create a new UI component "story" you need to create a TypeScript file (.tsx) inside the `components/stories` directory. 
 
-First, run the development server:
+For example, if you want to create a story for the Input component, you can create a file at `components/stories/Input.tsx`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+The `Input.tsx` file should contain the following structure:
+```tsx
+'use client'
+import { Input } from '@/ui/Input'
+import ComponentPreview from '../ComponentPreview'
+import { createArgs, useArgs, type Args } from '@/lib/useArgs'
+import CPropsTable from '@/components/PropsTable'
+
+// Define the arguments for the Input component
+const inputArgs = {
+  label: {
+    label: 'Label',
+    value: 'Label',
+    inputType: 'text',
+    description: 'The label of the input',
+    type: 'string',
+  },
+  description: {
+    label: 'Description',
+    value: 'The description of the input',
+    inputType: 'text',
+    description: 'The description of the input',
+    type: 'string',
+  },
+  disabled: {
+    label: 'Disabled',
+    value: false,
+    inputType: 'switch',
+    description: 'Disable the input',
+    type: 'boolean',
+  },
+  required: {
+    label: 'Required',
+    value: false,
+    inputType: 'switch',
+    description: 'The input is required',
+    type: 'boolean',
+  },
+} satisfies Args<typeof Input>
+
+// Create a unique ID for the arguments using the createArgs function and add the args to the map
+const id = createArgs(inputArgs)
+
+// Playground component to render the Input component with dynamic props, but you can also use it for showcasing multiple variants without the dynamic props.
+function Playground() {
+  const { props, propsString } = useArgs(id)
+
+  return (
+    <ComponentPreview code={`<Input${propsString} />`} title="Playground" id={id}>
+      <div className="py-8">
+        <Input {...props} />
+      </div>
+    </ComponentPreview>
+  )
+}
+
+// PropsTable component to display the props of the Input component
+function PropsTable() {
+  return <CPropsTable title="Props" args={inputArgs} />
+}
+
+export { Playground, PropsTable }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After creating the Input.tsx story file, you need to import it inside the `components/stories/index.tsx` file and add it to the exports using the `import * as` format. This allows the story to be included in the documentation later.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+import * as ButtonStories from './Button'
+import * as SelectStories from './Select'
+import * as TabsStories from './Tabs'
+import * as TextStories from './Text'
+import * as SwitchStories from './Switch'
+import * as InputStories from './Input'
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+export {
+  ButtonStories,
+  SelectStories,
+  TabsStories,
+  TextStories,
+  SwitchStories,
+  InputStories,
+}
+```
+### Create an MDX File for Documentation
+Next, you can create an MDX file inside the `/mdx/stories` directory. This file will be used to document the Input component and showcase its stories. You can organize the content and include the `InputStories` components as needed within the MDX file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```mdx
+---
+title: Input
+description: Displays a form input field or a component that looks like an input field.
+---
 
-## Learn More
+<InputStories.Playground />
+/* you can put text or other components between the story components, change order etc */
+<InputStories.PropsTable />
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Create a Story with "slots"
+You can also create stories for more complex components using slots.
+For example, here's the tabs story implementation:
+```tsx
+import * as Tabs from '@/ui/Tabs'
+import { useSlot, createArgs, Slot } from '@/lib/useArgsWithSlots'
+import ComponentPreview from '@/components/ComponentPreview'
+import { SlotsPropsTable } from '@/components/PropsTable'
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+const tabsArgs = {
+  root: {
+    args: {
+      value: {
+        label: 'Value',
+        value: '',
+        inputType: 'text',
+        description:
+          'The controlled value of the tab to activate. Should be used in conjunction with onValueChange.',
+        type: 'string',
+      },
+      onValueChange: {
+        label: 'On value change',
+        value: () => {},
+        inputType: 'text',
+        description: 'Callback invoked when the value changes.',
+        type: '(value: string) => void',
+      },
+    },
+    hideInPropsPanel: true, // you can hide an arg/prop from the panel/sheet and use it only for documentation
+  },
+  list: {
+    args: {
+      loop: {
+        label: 'Loop',
+        value: true,
+        inputType: 'switch',
+        description:
+          'When true, keyboard navigation will loop from last tab to first, and vice versa',
+        type: 'boolean',
+      },
+    },
+  },
+  trigger: {
+    args: {
+      disabled: {
+        label: 'Disabled',
+        value: false,
+        inputType: 'switch',
+        description: 'Disable the select',
+        type: 'boolean',
+      },
+    },
+  },
+} satisfies {
+  root: Slot<typeof Tabs.Root>
+  list: Slot<typeof Tabs.List>
+  trigger: Slot<typeof Tabs.Trigger>
+}
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+const id = createArgs(tabsArgs)
 
-## Deploy on Vercel
+function Playground() {
+  const trigger = useSlot<typeof tabsArgs>(id, 'trigger')
+  const list = useSlot<typeof tabsArgs>(id, 'list')
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  const tabsCode = `<Tabs.Root>
+  <Tabs.List${list.propsString}>
+    <Tabs.Trigger value="tab1"${trigger.propsString}>
+      Tab 1
+    </Tabs.Trigger>
+    <Tabs.Trigger value="tab2">Tab 2</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="tab1">Test</Tabs.Content>
+  <Tabs.Content value="tab2">Test</Tabs.Content>
+</Tabs.Root>`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  return (
+    <ComponentPreview code={tabsCode} id={id} title="Playground" hasSlots>
+      <div className="py-8">
+        <Tabs.Root>
+          <Tabs.List {...list.props}>
+            <Tabs.Trigger value="tab1" {...trigger.props}>
+              Tab 1
+            </Tabs.Trigger>
+            <Tabs.Trigger value="tab2">Tab 2</Tabs.Trigger>
+          </Tabs.List>
+          <Tabs.Content value="tab1">Test</Tabs.Content>
+          <Tabs.Content value="tab2">Test 2</Tabs.Content>
+        </Tabs.Root>
+      </div>
+    </ComponentPreview>
+  )
+}
+
+function PropsTable() {
+  return <SlotsPropsTable slots={tabsArgs} />
+}
+
+export { Playground, PropsTable }
+```
+To understand more how the args and stories works see `/lib/useArgs.tsx` and `/lib/useArgsWithSlots.tsx`.
