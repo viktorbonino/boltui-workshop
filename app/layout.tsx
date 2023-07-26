@@ -2,6 +2,7 @@ import './globals.css'
 import './prism.css'
 import { Inter } from 'next/font/google'
 import { cnBase } from 'tailwind-variants'
+import { Analytics } from '@vercel/analytics/react'
 
 const font = Inter({
   subsets: ['latin'],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         {children}
       </body>
+      <Analytics />
     </html>
   )
 }
